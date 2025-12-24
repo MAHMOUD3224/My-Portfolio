@@ -62,7 +62,8 @@ export function ProjectsGrid() {
       try {
         const response = await fetch('/api/projects');
         if (!response.ok) {
-          throw new Error('Failed to fetch projects');
+          const errorData = await response.json().catch(() => ({}));
+          throw new Error(errorData.error || 'Failed to fetch projects');
         }
         const data = await response.json();
         const filteredProjects = data.filter((project: GitHubRepo) => siteConfig.allowedProjects.includes(project.name));
