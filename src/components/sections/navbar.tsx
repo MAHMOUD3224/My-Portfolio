@@ -39,18 +39,18 @@ export function Navbar() {
   return (
     <motion.header
       initial={{ opacity: 0, y: -20 }}
-      animate={{ 
-        opacity: 1, 
-        y: isVisible ? 0 : -100 
+      animate={{
+        opacity: 1,
+        y: isVisible ? 0 : -100
       }}
-      transition={{ 
-        duration: 0.6, 
+      transition={{
+        duration: 0.6,
         ease: 'easeOut',
         y: { duration: 0.3, ease: 'easeInOut' }
       }}
       className="fixed top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
     >
-  <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 navbar-underline">
+      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 navbar-underline">
         {/* Logo / Brand */}
         <Link href="/" className="flex items-center space-x-2">
           <motion.div
@@ -71,39 +71,39 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-            {siteConfig.navigation.map((item) => (
-              <motion.div
-                whileHover={{ y: -3 }}
-                whileFocus={{ y: -3 }}
-                transition={{ type: 'spring', stiffness: 500, damping: 18 }}
-                className="inline-block"
-                key={item.href}
+          {siteConfig.navigation.map((item) => (
+            <motion.div
+              whileHover={{ y: -3 }}
+              whileFocus={{ y: -3 }}
+              transition={{ type: 'spring', stiffness: 500, damping: 18 }}
+              className="inline-block"
+              key={item.href}
+            >
+              <Link
+                href={item.href}
+                className={cn(
+                  'group relative px-3 py-2 text-sm font-medium transition-colors hover:text-foreground/80 focus:text-foreground/80',
+                  pathname === item.href
+                    ? 'text-foreground'
+                    : 'text-foreground/60'
+                )}
+                tabIndex={0}
               >
-                <Link
-                  href={item.href}
-                  className={cn(
-                    'group relative px-3 py-2 text-sm font-medium transition-colors hover:text-foreground/80 focus:text-foreground/80',
-                    pathname === item.href
-                      ? 'text-foreground'
-                      : 'text-foreground/60'
-                  )}
-                  tabIndex={0}
-                >
-                  <span className="relative">
-                    {item.label}
-                    <motion.div
-                      className="absolute left-0 right-0 -bottom-1 h-0.5 rounded group-hover:scale-x-100 group-focus:scale-x-100 scale-x-0 transition-transform"
-                      initial={{ scaleX: 0 }}
-                      animate={{ scaleX: 0 }}
-                      whileHover={{ scaleX: 1 }}
-                      whileFocus={{ scaleX: 1 }}
-                      transition={{ type: 'spring', bounce: 0.25, duration: 0.4 }}
-                      style={{ transformOrigin: 'left', background: 'var(--navbar-underline)' }}
-                    />
-                  </span>
-                </Link>
-              </motion.div>
-            ))}
+                <span className="relative">
+                  {item.label}
+                  <motion.div
+                    className="absolute left-0 right-0 -bottom-1 h-0.5 rounded group-hover:scale-x-100 group-focus:scale-x-100 scale-x-0 transition-transform"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    whileFocus={{ scaleX: 1 }}
+                    transition={{ type: 'spring', bounce: 0.25, duration: 0.4 }}
+                    style={{ transformOrigin: 'left', background: 'var(--navbar-underline)' }}
+                  />
+                </span>
+              </Link>
+            </motion.div>
+          ))}
         </nav>
 
         {/* Actions */}
@@ -145,13 +145,13 @@ export function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-80">
-              <SheetHeader>
+              <SheetHeader className="px-[10px]">
                 <SheetTitle className="text-left">
                   {siteConfig.siteName}
                 </SheetTitle>
               </SheetHeader>
-              
-              <div className="mt-6 space-y-6">
+
+              <div className="mt-6 space-y-6 px-[10px]">
                 {/* Navigation Links */}
                 <nav className="space-y-1">
                   {siteConfig.navigation.map((item) => (
@@ -192,7 +192,7 @@ export function Navbar() {
                 {/* Social Links */}
                 <div className="space-y-3">
                   <h3 className="text-sm font-semibold">Connect</h3>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 gap-2">
                     {siteConfig.social.map((social) => {
                       const Icon = social.icon ? iconMap[social.icon as keyof typeof iconMap] : null;
                       return (
