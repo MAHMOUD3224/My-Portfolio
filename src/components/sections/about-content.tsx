@@ -17,13 +17,13 @@ export function AboutContent() {
       <Card className="relative bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm border-0 overflow-hidden">
 
         <CardHeader className="relative z-10 flex flex-col items-center justify-center gap-4 pt-8 pb-2">
-          <div className="relative w-48 h-48 overflow-hidden border-4 border-primary shadow-xl bg-background">
+          <div className="relative w-48 h-48 overflow-hidden rounded-lg border-4 border-primary shadow-xl bg-background">
             <Image
               src={siteConfig.author_img}
               alt={`${siteConfig.author} profile`}
               width={192}
               height={192}
-              className="object-cover w-full h-full rounded-lg"
+              className="object-cover w-full h-full"
               priority
             />
             {/* SaaS-style background effect */}

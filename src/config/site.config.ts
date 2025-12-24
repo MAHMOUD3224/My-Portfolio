@@ -34,6 +34,7 @@ export interface SiteConfig {
     github: string;
     linkedin: string;
     email: string;
+    resume: string;
   };
   social: SocialLink[];
   navigation: NavItem[];
@@ -63,7 +64,7 @@ export const siteConfig: SiteConfig = {
   description: 'Front End Developer creating useful & responsive web applications with high performance and clean code.',
   about:
     'Results-oriented Front-End Developer focused on creating responsive and high-performance web applications. Committed to clean, maintainable code and exceptional user experiences. Always learning to deliver modern digital solutions.',
-  author_img: 'https://avatars.githubusercontent.com/u/148764282?s=400&u=081ae7bf4929a7b645123b0ab1db064ae3821a14&v=4',//TODO: change to my own image
+  author_img: 'https://avatars.githubusercontent.com/u/148764282?s=400&u=081ae7bf4929a7b645123b0ab1db064ae3821a14&v=4',
   keywords: [
     'Mahmoud Rashad',
     'Frontend Developer',
@@ -85,11 +86,12 @@ export const siteConfig: SiteConfig = {
     github: 'https://github.com/MAHMOUD3224',
     linkedin: 'https://www.linkedin.com/in/mahmoud-rashad-2353b0252/',
     email: 'mailto:mahmoud.tec7@gmail.com',
+    resume: 'https://drive.google.com/file/d/1-fOkZzuS7LFZQX-pS0f7EYUXVoO42BKl/view?usp=drivesdk', // TODO: Add your Google Drive resume link here
   },
   social: [
-    { label: 'GitHub', url: 'https://github.com/MAHMOUD3224', icon: 'github' },
+    { label: 'GitHub', url: 'https://github.com/MAHMOUD3224/', icon: 'github' },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/mahmoud-rashad-2353b0252/', icon: 'linkedin' },
-    { label: 'Website', url: 'https://mahmoud-rashad.netlify.app/', icon: 'globe' },
+    { label: 'WhatsApp', url: 'https://wa.me/+201064340657', icon: 'whatsapp' },
   ],
   navigation: [
     { label: 'Home', href: '/' },
