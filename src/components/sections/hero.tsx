@@ -35,7 +35,7 @@ export function HeroSection() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.1 }}
           >
-            <Link href={siteConfig.links.resume} target="_blank" rel="noopener noreferrer">
+            <a href={siteConfig.links.resume} target="_blank" rel="noopener noreferrer">
               <Announcement
                 themed
                 className="mx-auto flex items-center justify-center w-fit max-w-full text-xs sm:text-sm md:text-base px-4 py-1.5 border border-border dark:border-secondary hover:bg-muted/50 transition-colors"
@@ -46,7 +46,7 @@ export function HeroSection() {
                   <ArrowUpRightIcon className="shrink-0 text-muted-foreground" size={16} />
                 </AnnouncementTitle>
               </Announcement>
-            </Link>
+            </a>
           </motion.div>
           {/* Main Heading - show name and description from config */}
           <div className="space-y-4 sm:space-y-6">
