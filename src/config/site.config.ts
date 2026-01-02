@@ -59,7 +59,7 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   siteName: 'Mahmoud Rashad',
-  domain: 'mahmoud-rashad.netlify.app/',
+  domain: 'mahmoud-rashad.netlify.app',
   author: 'Mahmoud Rashad',
   description: 'Front End Developer creating useful & responsive web applications with high performance and clean code.',
   about:
