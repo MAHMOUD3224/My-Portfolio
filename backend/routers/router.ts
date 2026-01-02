@@ -25,3 +25,16 @@ router.post("/api/v1/userData", async (req: Request, res: Response)=>{
 		res.send(response);
 	}
 })
+
+router.delete("/api/v1/userData", async (req: Request, res: Response)=>{
+	try {
+		let newUser = { "userName": "", "slogan": "", "shortSummary": "", "bio": [], "projectsDescription": "" }
+		let newUserString = JSON.stringify(newUser, null , 2);
+		await fs.writeFile(dataFileDir, newUserString);
+		let response: HttpResponse = {status: 200, "message": "Success: Your data has been written", data: newUser};
+		res.send(response);
+	} catch (error) {
+		let response: HttpResponse = {status: 400, "message": "", data: null};
+		res.send(response);
+	}
+})
