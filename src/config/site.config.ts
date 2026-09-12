@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 export type SocialLink = {
   label: string;
   url: string;
-  icon?: string; // name for icon library if needed later
+  icon?: string;
 };
 
 
