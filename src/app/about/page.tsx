@@ -11,8 +11,8 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen py-16">
       <div className="mx-auto max-w-4xl px-6 mt-16 md:mt-24">
-        <AboutHeader />
-        <AboutContent />
+          <AboutHeader />
+          <AboutContent />
       </div>
     </div>
   );
